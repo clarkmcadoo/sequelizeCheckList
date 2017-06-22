@@ -1,0 +1,10 @@
+*{
+    line-height: 2;
+}
+.todoList{
+    display: flex;
+    flex-direction: column;
+}
+.todoList li{
+    display: flex;
+}
