@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "clarkmcadoo",
+    "password": null,
+    "database": "check-list",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "clarkmcadoo",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "clarkmcadoo",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
