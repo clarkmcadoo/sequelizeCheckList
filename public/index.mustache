@@ -10,28 +10,39 @@
 </head>
 
 <body>
- <form action="/" method="post">
+<!--<script src="./main.js"></script>-->
+    
+    <form action="/addTodo" method="post">
         <input type="text" name="todo">
-        <input type="submit">
-        <br>
-        <ul class=todoList>
-        
-        {{#todo}}
+        <button id="addTaskSubmit" type="submit">Add Task</button>
+    </form>
+
+    <h3>Todo tasks</h3>
+    <ul class=todoList>
+
+        {{#todo}} {{^completed}}
         <li>
-        <label for="checkbox">Complete?
-        <input for="mark-complete1" type="checkbox" id="checkbox"></label><div>{{.}}</div>
-        {{/todo}}
+            <form action="/completeToDo" method="post">
+                <!--<input type="hidden" value="{{id}}">-->
+                <button id="completeTask_{{id}}" type="submit" value={{id}} name="complete">complete</button>
+                <div>{{item}}</div>
+            </form>
         </li>
-        {{^todo}}
-        <p>You have nothing to do!</p>
-        {{/todo}}
-        
-       </ul>
-    </form>
-    <form action="">
-        <h3>Complete tasks</h3>
-        {{complete}}
-    </form>
+        {{/completed}} {{/todo}}
+    </ul>
+
+    <h3>Complete tasks</h3>
+    <ul class=completeList>
+
+        {{#todo}} {{#completed}}
+            <li>
+                <form action="/deleteComplete" method="post">
+                    <button id="delete" value={{id}} name="delete">delete</button>
+                    <div>{{item}}</div>
+                </form>
+            </li>
+        {{/completed}} {{/todo}}
+    </ul>
 </body>
 
 </html>

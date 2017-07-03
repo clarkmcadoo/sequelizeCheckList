@@ -8,3 +8,16 @@
 .todoList li{
     display: flex;
 }
+.todoList li form{
+    display: flex;
+}
+.completeList{
+    display: flex;
+    flex-direction: column;
+}
+.completeList li{
+    display: flex;
+}
+.completeList li form{
+    display: flex;
+}
